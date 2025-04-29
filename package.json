@@ -1,0 +1,12 @@
+{
+  "name": "labs-template",
+  "version": "0.1",
+  "type": "module",
+  "scripts": {
+    "check-labs": "node --import=tsx checks/runner.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.4"
+  }
+}
