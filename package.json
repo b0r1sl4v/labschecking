@@ -6,7 +6,12 @@
     "check-labs": "node --import=tsx checks/runner.ts"
   },
   "devDependencies": {
+    "@types/css": "^0.0.38",
     "@types/node": "^22.15.3",
     "tsx": "^4.19.4"
+  },
+  "dependencies": {
+    "css": "^3.0.0",
+    "node-html-parser": "^7.0.1"
   }
 }

@@ -1,13 +1,4 @@
-import { readFileSync } from 'fs';
-import { dirname, resolve } from 'path';
-import { findHTMLTags, checkFileExists } from './helpers';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const filepath = resolve(__dirname, '..', 'index.html');
-
-checkFileExists(filepath);
+import { getFileContent, getHTMLTags } from './helpers';
 
 const tags = [
   'header',
@@ -24,12 +15,6 @@ const tags = [
   'li',
 ];
 
-let htmlContent;
-try {
-  htmlContent = readFileSync(filepath, 'utf-8');
-} catch (error) {
-  console.error(error);
-  process.exit(1);
-}
+const htmlContent = getFileContent('index.html');
 
-findHTMLTags(tags, htmlContent);
+getHTMLTags(tags, htmlContent);

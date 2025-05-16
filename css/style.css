@@ -1,0 +1,17 @@
+:root {
+  --green: #aaa;
+  font-size: 62%;
+}
+
+html {
+  margin: 0;
+}
+
+/* body {
+  display: flex;
+} */
+
+h1 {
+  font-size: 42;
+  /* font-style: italic; */
+}
