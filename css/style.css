@@ -1,17 +1,23 @@
 :root {
   --green: #aaa;
   font-size: 62%;
+  line-height: 24px;
 }
 
 html {
   margin: 0;
 }
 
-/* body {
+body {
+  color: var(--green);
   display: flex;
-} */
+}
 
 h1 {
   font-size: 42;
-  /* font-style: italic; */
+  font-weight: 700;
+}
+
+main {
+  border-radius: 10px;
 }

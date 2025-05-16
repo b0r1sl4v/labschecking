@@ -74,8 +74,6 @@ type Rule = {
 
 export type SelectorStyleProps = Record<string, Rule[]>;
 
-export type CommonStyleProps = Rule[];
-
 type GetSelectorStyles = (
   props: SelectorStyleProps,
   cssContent: string,
@@ -143,6 +141,50 @@ export const getSelectorStyles: GetSelectorStyles = (props, cssContent) => {
   return allFound;
 };
 
-const getCommonStyles = () => {
-  // TODO: complete this
+export type CommonStyleProps = Rule[];
+type GetCommonStyles = (props: CommonStyleProps, cssContent: string) => boolean;
+
+export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
+  const stylesTree = parseStyles(cssContent).stylesheet?.rules;
+  if (!stylesTree) {
+    sendError('Стили некорректны');
+    process.exit(1);
+  }
+
+  let allFound = true;
+  for (const prop of props) {
+    let found = false;
+    for (const rulesBlock of stylesTree) {
+      if (rulesBlock.type !== 'rule' || !rulesBlock.declarations?.length)
+        continue;
+      for (const rule of rulesBlock.declarations) {
+        if (rule.type === 'comment' || !rule.property) continue;
+        if (!prop.rule.test(rule.property)) continue;
+        if (!prop.definition) {
+          found = true;
+          break;
+        }
+        if (
+          prop.definition &&
+          (!rule.value || !prop.definition?.test(rule.value))
+        ) {
+          continue;
+        }
+        found = true;
+      }
+    }
+
+    if (!found) {
+      const errorText =
+        prop.errorText ??
+        `Правило "${prop.rule}" ` +
+          (prop.definition
+            ? `со значением ${prop.definition} `
+            : 'не было найдено');
+      sendError(errorText);
+      allFound = false;
+    }
+  }
+
+  return allFound;
 };

@@ -6,6 +6,7 @@ import {
   CommonStyleProps,
   getSelectorStyles,
   sendSuccess,
+  getCommonStyles,
 } from './helpers';
 
 const htmlContent = getFileContent('index.html');
@@ -31,10 +32,12 @@ const hasNormalize = existingStylesFiles['normalize.css'];
 const hasReseter = existingStylesFiles['reseter.css'];
 
 if (!hasNormalize && !hasReseter) {
-  sendError('Нужно добавить или normalize.css, или reseter.css');
+  sendError('Не подключен ни normalize.css, ни reseter.css');
 }
 if (hasNormalize && hasReseter) {
-  sendError('normalize.css и reseter.css не могут существовать одновременно');
+  sendError(
+    'normalize.css и reseter.css не могут быть подключены одновременно',
+  );
 }
 
 if (!existingStylesFiles['style.css']) {
@@ -85,6 +88,8 @@ const commonStyleProps: CommonStyleProps = [
   },
 ];
 
-if (selectorStylesFound) {
+const commonStylesFound = getCommonStyles(commonStyleProps, styles);
+
+if (selectorStylesFound && commonStylesFound) {
   sendSuccess('Все стили найдены');
 }

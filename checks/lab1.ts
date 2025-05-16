@@ -1,3 +1,7 @@
-import { getFileContent } from './helpers';
+import { getFileContent, getHTMLTags } from './helpers';
 
-getFileContent('index.html');
+const markup = getFileContent('index.html');
+
+const tags = ['header', 'footer', 'main', 'section']; // TODO: find more common tags of all given templates
+
+getHTMLTags(tags, markup);
