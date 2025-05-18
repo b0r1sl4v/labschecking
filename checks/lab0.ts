@@ -1,4 +1,5 @@
-import { getFileContent, getHTMLTags } from './helpers';
+import { getFileContent } from './helpers/common';
+import { getHTMLTags } from './helpers/markup';
 
 const tags = [
   'header',

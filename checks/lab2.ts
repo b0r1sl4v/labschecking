@@ -1,13 +1,11 @@
 import {
-  getHTMLTags,
-  getFileContent,
-  sendError,
   SelectorStyleProps,
   CommonStyleProps,
   getSelectorStyles,
-  sendSuccess,
   getCommonStyles,
-} from './helpers';
+} from './helpers/styles';
+import { getFileContent, sendError, sendSuccess } from './helpers/common';
+import { getHTMLTags } from './helpers/markup';
 
 const htmlContent = getFileContent('index.html');
 

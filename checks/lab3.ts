@@ -1,13 +1,15 @@
 import {
   CommonStyleProps,
   getCommonStyles,
-  getFileContent,
   getSelectorStyles,
   SelectorStyleProps,
+} from './helpers/styles';
+import {
+  getFileContent,
   sendError,
   sendSuccess,
   sendWarning,
-} from './helpers';
+} from './helpers/common';
 
 const styles = getFileContent('css/style.css');
 
@@ -23,7 +25,7 @@ const selectorStyleProps: SelectorStyleProps = {
 const selectorStylesFound = getSelectorStyles(selectorStyleProps, styles);
 
 if (selectorStylesFound) {
-  sendSuccess('Задан блочная модель для всех элементов задана');
+  sendSuccess('Блочная модель для всех элементов задана');
 } else {
   sendWarning('В style.css не задана блочная модель для всех элементов');
 }
@@ -46,7 +48,7 @@ const commonSizeStyles: CommonStyleProps = [
     rule: RegExp('width'),
   },
   {
-    rule: RegExp('height'),
+    rule: RegExp('^height'),
   },
 ];
 

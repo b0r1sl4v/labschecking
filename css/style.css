@@ -11,6 +11,7 @@ html {
 body {
   color: var(--green);
   display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -20,4 +21,19 @@ h1 {
 
 main {
   border-radius: 10px;
+  height: 50%;
+  margin-left: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
