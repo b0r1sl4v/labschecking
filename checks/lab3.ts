@@ -4,7 +4,9 @@ import {
   getFileContent,
   getSelectorStyles,
   SelectorStyleProps,
+  sendError,
   sendSuccess,
+  sendWarning,
 } from './helpers';
 
 const styles = getFileContent('css/style.css');
@@ -20,8 +22,14 @@ const selectorStyleProps: SelectorStyleProps = {
 
 const selectorStylesFound = getSelectorStyles(selectorStyleProps, styles);
 
-// TODO: write a function returning true if at least 1 rule has been found. It will considerably simplify check comprehension
-const commonStyleProps: CommonStyleProps = [
+if (selectorStylesFound) {
+  sendSuccess('Задан блочная модель для всех элементов задана');
+} else {
+  sendWarning('В style.css не задана блочная модель для всех элементов');
+}
+
+console.log('\nПроверка на заданные размеры:');
+const commonSizeStyles: CommonStyleProps = [
   {
     rule: RegExp('max-height'),
   },
@@ -40,18 +48,46 @@ const commonStyleProps: CommonStyleProps = [
   {
     rule: RegExp('height'),
   },
+];
+
+const { oneFound: sizesPropFound } = getCommonStyles(commonSizeStyles, styles);
+
+if (sizesPropFound) {
+  sendSuccess('Есть селекторы с заданным размером');
+} else {
+  sendError('Нигде не определены размеры');
+}
+
+console.log('\nПроверка на заданные margin и padding:');
+const commonDistanceStyles: CommonStyleProps = [
   {
     rule: RegExp('padding'),
   },
   {
     rule: RegExp('margin'),
   },
+];
+
+console.log();
+const { oneFound: distancePropFound } = getCommonStyles(
+  commonDistanceStyles,
+  styles,
+);
+
+if (distancePropFound) {
+  sendSuccess('Есть селекторы с заданными margin или padding');
+} else {
+  sendError('Ни margin, Ни padding нигде не заданы');
+}
+
+console.log('\nПроверка на заданные position и z-index:');
+const commonPositionStyles: CommonStyleProps = [
   {
-    rule: RegExp('poition'),
+    rule: RegExp('position'),
     definition: RegExp('relative'),
   },
   {
-    rule: RegExp('poition'),
+    rule: RegExp('position'),
     definition: RegExp('absolute'),
   },
   {
@@ -59,8 +95,13 @@ const commonStyleProps: CommonStyleProps = [
   },
 ];
 
-const commonStylesFound = getCommonStyles(commonStyleProps, styles);
+const { oneFound: positionPropFound } = getCommonStyles(
+  commonPositionStyles,
+  styles,
+);
 
-if (selectorStylesFound && commonStylesFound) {
-  sendSuccess('Все стили найдены');
+if (positionPropFound) {
+  sendSuccess('Есть селекторы с заданными свойствами position или z-index');
+} else {
+  sendError('Свойства position и z-index нигде не задано');
 }

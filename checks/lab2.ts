@@ -88,7 +88,10 @@ const commonStyleProps: CommonStyleProps = [
   },
 ];
 
-const commonStylesFound = getCommonStyles(commonStyleProps, styles);
+const { allFound: commonStylesFound } = getCommonStyles(
+  commonStyleProps,
+  styles,
+);
 
 if (selectorStylesFound && commonStylesFound) {
   sendSuccess('Все стили найдены');

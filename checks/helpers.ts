@@ -8,6 +8,10 @@ export const sendSuccess = (message: string) => {
   console.log(`✅ ${message}`);
 };
 
+export const sendWarning = (message: string) => {
+  console.log(`⚠️  ${message}`);
+};
+
 export const sendError = (message: string) => {
   console.log(`❌ ${message}`);
 };
@@ -142,7 +146,10 @@ export const getSelectorStyles: GetSelectorStyles = (props, cssContent) => {
 };
 
 export type CommonStyleProps = Rule[];
-type GetCommonStyles = (props: CommonStyleProps, cssContent: string) => boolean;
+type GetCommonStyles = (
+  props: CommonStyleProps,
+  cssContent: string,
+) => { oneFound: boolean; allFound: boolean };
 
 export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
   const stylesTree = parseStyles(cssContent).stylesheet?.rules;
@@ -152,6 +159,7 @@ export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
   }
 
   let allFound = true;
+  let oneFound = false;
   for (const prop of props) {
     let found = false;
     for (const rulesBlock of stylesTree) {
@@ -161,6 +169,7 @@ export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
         if (rule.type === 'comment' || !rule.property) continue;
         if (!prop.rule.test(rule.property)) continue;
         if (!prop.definition) {
+          oneFound = true;
           found = true;
           break;
         }
@@ -178,13 +187,12 @@ export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
       const errorText =
         prop.errorText ??
         `Правило "${prop.rule}" ` +
-          (prop.definition
-            ? `со значением ${prop.definition} `
-            : 'не было найдено');
-      sendError(errorText);
+          (prop.definition ? `со значением ${prop.definition} ` : '') +
+          'не было найдено';
+      sendWarning(errorText);
       allFound = false;
     }
   }
 
-  return allFound;
+  return { allFound, oneFound };
 };
