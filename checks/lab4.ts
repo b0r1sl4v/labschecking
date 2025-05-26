@@ -7,7 +7,7 @@ import {
   sendWarning,
 } from './helpers/common';
 import { getHTMLTags } from './helpers/markup';
-import { getCommonStyles, getSelectorStyles } from './helpers/styles';
+import { getCommonStyles } from './helpers/styles';
 
 console.log('\nПроверка папки с изображениями:');
 const imgDirs = ['img', 'images'];
@@ -36,6 +36,7 @@ if (!imgFolderFound) {
 console.log('\nПроверка index.html:');
 const htmlContent = getFileContent('index.html');
 const tags = getHTMLTags(['img', 'figure'], htmlContent);
+console.log(process.cwd().split('/').slice(-1)[0]);
 
 for (const img of tags['img'] || []) {
   const src = img.getAttribute('src');
@@ -43,6 +44,7 @@ for (const img of tags['img'] || []) {
     sendError('<img> без атрибута src');
     continue;
   }
+
   if (!/^(\.\/|\.\.\/)/.test(src)) {
     sendError(`<img src="${src}"> не использует относительный путь`);
   }

@@ -1,30 +1,1149 @@
+@font-face {
+  font-family: 'BebasNeue Bold';
+  src: url('../fonts/BebasNeue/BebasNeueBold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'BebasNeue Bold';
+  src: url('../fonts/BebasNeue/bebas-neue-v14-latin-regular.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../fonts/BebasNeue/BebasNeueRegular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Raleway Regular';
+  src: url('../fonts/Raleway/Raleway.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Raleway Regular';
+  src: url('../fonts/Raleway/raleway-v34-latin-regular.woff2') format('woff2');
+}
 :root {
-  --green: #aaa;
-  font-size: 62%;
-  line-height: 24px;
+  --accent: #396448;
+  --beige: #ab8264;
+  --light_beige: #efe9e3;
+  --accent_hover: #56986e;
+  --text: #272727;
+  --white: #f9f4f0;
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--white);
+}
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: #56986e;
+  color: white;
+}
+li {
+  list-style-type: none;
+}
+button {
+  border-style: solid;
+}
+a {
+  text-decoration: none;
+}
+p,
+form,
+a,
+dl {
+  font-family: 'Raleway Regular';
+  font-size: 1.4rem;
+  line-height: 140%;
+}
+h1,
+h2,
+h3,
+button,
+.green_button,
+.white_button,
+.button_whatsapp {
+  font-family: 'BebasNeue Bold';
+  line-height: 120%;
+}
+h1,
+h2 {
+  font-size: 3.6rem;
+}
+h3,
+button,
+summary {
+  font-size: 2rem;
+  font-weight: bold;
+}
+h2 {
+  margin: 2rem auto;
+}
+/* заголовки секций */
+.section_title {
+  text-align: center;
+}
+.white_button,
+.button_whatsapp {
+  padding: 2rem;
+  border: 0 solid var(--accent);
+  border-radius: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  color: var(--accent);
+  font-weight: bold;
+  line-height: 120%;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.white_button {
+  background-color: var(--white);
+}
+.button_whatsapp {
+  border-width: 0.1rem;
+  background-color: var(--white);
+}
+.green_button {
+  padding: 2rem;
+  border: 0rem solid #ffffff;
+  border-radius: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: var(--accent);
+  color: #ffffff;
+  box-sizing: border-box;
+  line-height: 120%;
+  transition: 0.3s;
+  border: 0.1rem solid var(--accent);
+}
+.green_button:hover,
+.white_button:hover,
+.button_whatsapp:hover {
+  background-color: var(--accent_hover);
+  color: white;
+  border-color: var(--accent_hover);
+}
+.white_button:active,
+.button_whatsapp:active {
+  background-color: var(--accent);
+  color: var(--white);
+}
+.green_button:active {
+  background-color: var(--white);
+  color: var(--accent);
+  border: 0.1rem solid var(--accent);
+}
+.header__wrapper {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  margin: 0 auto;
+  min-width: 29rem;
+  max-width: 70rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-html {
+@media (max-width: 515px) {
+  .header__wrapper {
+    max-width: 37rem;
+  }
+}
+.header__link {
   margin: 0;
 }
-
-body {
-  color: var(--green);
+.header__nav_contact {
+  margin: 0;
   display: flex;
+  justify-content: space-between;
+}
+.header__navigation {
+  display: none;
+}
+.header__tel {
+  display: none;
+  padding: 1rem 1.4rem;
+  margin: 0.1rem 0;
+  font-family: 'BebasNeue';
+  letter-spacing: 0.05em;
+  color: var(--white);
+  border-radius: 1rem;
+  transition: 0.1s;
+}
+.header__tel:hover {
+  background-color: var(--accent_hover);
+}
+.header__menu {
+  background-color: var(--accent);
+  border-width: 0rem;
+  border-radius: 1rem;
+  margin: 0;
+  max-height: 4.6rem;
+  max-width: 4.6rem;
+  position: relative;
+}
+.header__svg_menu {
+  margin: 1.6rem 1.1rem;
+}
+
+/* первая секция
+*/
+.about__wrapper {
+  position: relative;
+  color: var(--white);
+  text-align: center;
+  min-width: 32rem;
+  max-width: 72rem;
+  margin: auto;
+  margin-bottom: 8rem;
+}
+@media (min-width: 626px) {
+  .about__wrapper {
+    color: var(--text);
+  }
+}
+.about__container_img {
+  position: absolute;
+  top: -18.3rem;
+  z-index: -1;
+  margin: 0;
+}
+.about__desc_container {
+  min-width: 29rem;
+  margin: 18.3rem 1.5rem 0 1.5rem;
+  max-width: 38rem;
+}
+@media (max-width: 625px) {
+  .about__container_img {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  .about__image {
+    width: 100%;
+  }
+}
+@media (min-width: 626px) {
+  .about__container_img {
+    right: 0;
+    top: -10rem;
+  }
+  .about__desc_container {
+    margin: 10rem 1.5rem 0 1.5rem;
+  }
+}
+.about__image {
+  min-width: 32rem;
+  max-width: 40rem;
+  max-height: 46.3rem;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: -1;
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+@media (max-width: 700px) {
+  .about__desc_container {
+    max-width: 29rem;
+  }
+}
+@media (max-width: 625px) {
+  .about__desc_container {
+    min-width: 29rem;
+    width: 100%;
+    max-width: 40rem;
+    margin: 18.3rem auto 0 auto;
+    padding: 0 1.5rem;
+  }
+}
+.about__description {
+  margin: 2rem 1.5rem 4.6rem 1.5rem;
+}
+@media (min-width: 701px) and (max-width: 1023px) {
+  .about__description {
+    margin: 2rem 1.5rem 3.2rem 1.5rem;
+  }
+}
+@media (min-width: 371px) and (max-width: 625px) {
+  .about__desc_container {
+    margin: 20rem auto 0 auto;
+  }
+  .about__description {
+    margin: 3rem 1.5rem 8rem 1.5rem;
+  }
+  .about__container_img {
+    top: -20rem;
+  }
+}
+.about__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.about__button_dog {
+  padding: 2rem 7.5rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.about__button_whatsapp {
+  padding: 1.9rem 10.75rem;
+  letter-spacing: 0.05em;
+  font-family: 'BebasNeue';
+}
+.about__search {
+  display: none;
+}
+
+/* секция "О ПИТОМНИКЕ" */
+.about_nursery__wrapper {
+  min-width: 32rem;
+  max-width: 58rem;
+  margin: 8rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+.about_nursery__third_text,
+.about_nursery__first_text,
+.about_nursery__second_text {
+  background-color: var(--light_beige);
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.about_nursery_svg {
+  display: none;
+}
+.about_nursery__first_text {
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+  overflow: hidden;
+}
+.about_nursery__image_first,
+.about_nursery__image_second,
+.about_nursery__image_third {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 290 / 172;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3rem;
+}
+.about_nursery__image_first {
+  background-image: url('../images/о_питомнике_первая_собака.jpeg');
+  border-radius: 2rem;
+}
+.about_nursery__image_second {
+  background-image: url('../images/о_питомнике_вторая_собака.jpeg');
+}
+.about_nursery__image_third {
+  background-image: url('../images/о_питомнике_третья_собака.jpeg');
+}
+.about_nursery__image_mobile {
+  width: 29rem;
+  height: 17.2rem;
+  object-fit: cover;
+  border-radius: 2rem;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* НАШИ ЩЕНКИ секция */
+.our_puppies__wrapper {
+  margin-bottom: 8rem;
+  margin-top: 7rem;
+  padding-top: 1rem;
+  position: relative;
+  min-width: 32rem;
+}
+
+.our_puppies__container_of_button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+.our_puppies__list_of_buttons {
+  display: flex;
+  padding: 0 1.5rem;
+  gap: 1rem;
+  overflow: scroll;
+}
+.our_puppies__item_as_button {
+  display: inline;
+  white-space: nowrap;
+  margin: 0;
+}
+.our_puppies__button {
+  border-color: var(--accent);
+  color: var(--accent);
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  background-color: transparent;
+  line-height: 120%;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem 1.6rem;
+  transition: 0.3s;
+}
+.our_puppies__button:hover {
+  background-color: var(--accent_hover);
+  color: var(--white);
+  border-color: var(--accent_hover);
+}
+.our_puppies__button:active {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  color: white;
+}
+.lists {
+  background-color: var(--accent);
+  border-radius: 3rem;
+  color: var(--white);
+  padding: 5rem 0;
+  margin-top: 5rem;
+}
+.our_puppies__lists h2 {
+  margin-top: 0;
+}
+.lists__black_chij {
+  padding: 0 1.5rem;
+  margin: 2rem auto 3rem auto;
+  display: flex;
+  gap: 1rem;
+  overflow: scroll;
+}
+@media (min-width: 920px) {
+  .lists__black_chij {
+    justify-content: center;
+  }
+}
+.lists__item_of_black_chij {
+  margin: 0;
+}
+.lists__button_of_black_chij {
+  width: 29rem;
+  height: 25rem;
+  padding: 0;
+  border-width: 0;
+  text-align: left;
+  border-radius: 2rem;
+  padding: 18.65rem 1.6rem 1.55rem 1.6rem;
+  background-color: var(--accent);
+  background: linear-gradient(
+    177.4deg,
+    rgba(171, 130, 100, 0.06) 1.83%,
+    #ab8264 97.83%
+  );
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  transition: 0.3s;
+}
+.lists__button_of_black_chij:hover {
+  backdrop-filter: blur(25px);
+  padding: 4rem 2.4rem;
+}
+.lists__button_of_black_chij:active {
+  backdrop-filter: blur(25px);
+  padding: 4rem 2.4rem;
+}
+
+.lists__button_of_black_chij:focus {
+  backdrop-filter: blur(25px);
+  padding: 4rem 2.4rem;
+}
+.lists__item_of_liberti_to_deeside {
+  background-image: url(../images/черный_чиж_либерти_то_дисайд.jpeg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+.lists__item_of_love_and_dance {
+  background-image: url(../images/черный_чиж_лаф_энд_дэнс.jpeg);
+  background-size: cover;
+  border-radius: 2rem;
+  background-position: center;
+}
+.lists__item_of_lastin_impression {
+  background-image: url(../images/черный_чиж_ластин_импрэшн.jpeg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+.lists__title,
+.lists__title_first {
+  margin: 0;
+  color: var(--white);
+}
+.lists__title_first {
+  margin-top: 0;
+}
+.lists__container_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lists a {
+  display: inline-block;
+  padding: 2rem 8.95rem;
+  letter-spacing: 0.05em;
+  margin: 0 auto;
+}
+
+/* секция ПОЧЕМУ МЫ ЛУЧШИЙ ВЫБОР */
+.best_choice__wrapper {
+  min-width: 32rem;
+  max-width: 58rem;
+  margin: 8rem auto 7rem auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+.best_choice__section_title {
+  text-align: center;
+  margin-top: 0;
+}
+.best_choice__list {
+  padding: 0;
+  margin-top: 21.6rem;
+  display: flex;
+  gap: 1rem;
   flex-direction: column;
 }
-
-h1 {
-  font-size: 42;
-  font-weight: 700;
+.best_choice__item {
+  background-color: var(--light_beige);
+  color: var(--text);
+  border-radius: 2rem;
+  padding: 2rem 1.6rem;
+  min-width: 29rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#delivery_world {
+  margin-bottom: 0;
+}
+.best_choice__title {
+  margin: 0;
+}
+.best_choice__text {
+  margin: 1rem 6.6rem 0 0;
+  min-width: 20.8rem;
+}
+.best_choice__text_3 {
+  margin: 1rem 3.8rem 0 0;
+  min-width: 23.6rem;
+  letter-spacing: -0.02em;
+}
+.best_choice__text_4 {
+  margin: 1rem 7.9rem 0 0;
+  min-width: 19.5rem;
+}
+.best_choice_image {
+  border-radius: 3rem;
+  position: absolute;
+  z-index: -1;
+  top: 10.6rem;
+  height: 33.8rem;
+  width: 29rem;
+  object-fit: cover;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  left: 0;
+  right: 0;
+}
+.best_choice__svg {
+  position: absolute;
+  right: 0;
+  top: 0.434rem;
+  width: 8rem;
+  height: 8rem;
+  transform: rotate(-10deg);
+}
+.best_choice__svg_2 {
+  top: 0.134em;
+  right: 0.66em;
+}
+.best_choice__svg_3 {
+  top: 0;
+  right: 0;
+}
+.best_choice__svg_4 {
+  top: 0.413em;
+  right: 0.287em;
 }
 
-main {
-  border-radius: 10px;
-  height: 50%;
-  margin-left: auto;
+/* секция О ПОРОДЕ */
+
+.about_breed__wrapper {
+  min-width: 32rem;
+  padding-top: 1rem;
+  margin: 7rem 0 8rem 0;
+  position: relative;
+}
+.about_breed__container_of_button {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-left: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.about_breed__list {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  overflow: scroll;
+}
+.about_breed__item {
+  display: inline-block;
+  margin: 0;
+  white-space: nowrap;
 }
 
+.about_breed__button {
+  border-color: var(--beige);
+  color: var(--beige);
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  background-color: transparent;
+  line-height: 120%;
+  text-align: center;
+  padding: 2rem 1.6rem;
+  transition: 0.3s;
+}
+.about_breed__button:hover {
+  background-color: var(--light_beige);
+  border-color: var(--light_beige);
+}
+.about_breed__button:active {
+  background-color: var(--beige);
+  border: 0.1rem solid var(--beige);
+  color: white;
+}
+.about_breed__breeds {
+  background-color: var(--beige);
+  margin-top: 5rem;
+  padding: 5rem 1.4rem 5rem 1.6rem;
+  border-radius: 3rem;
+}
+.about_breed__breeds h2 {
+  color: var(--white);
+  margin-top: 0;
+}
+.breeds__image {
+  border-radius: 3rem;
+  display: block;
+  /* margin-left: auto;
+    margin-right: auto; */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 290 / 350;
+  object-fit: cover;
+  object-position: center;
+}
+.breeds__list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 0;
+  margin: 1rem auto 3.5rem auto;
+  max-width: 58rem;
+}
+.breeds__appearance,
+.breeds__personality,
+.breeds__adaptability,
+.breeds__care,
+.breeds__activity {
+  background-color: var(--light_beige);
+  color: var(--text);
+  border-radius: 3rem;
+  padding: 2rem 1.6rem;
+  width: 100%;
+}
+.breeds__adaptability,
+.breeds__care,
+.breeds__activity {
+  display: none;
+}
+.breeds__title {
+  margin: 0;
+}
+.breeds__text {
+  margin: 1rem 0 0 0;
+}
+.breeds__paws {
+  margin: 0.4rem 0 0.6rem 0;
+}
+.breeds__paws_desktop {
+  display: none;
+}
+.breeds__container_button {
+  display: flex;
+  justify-content: center;
+}
+.breeds a {
+  padding: 2rem 10.35rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* секция ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ */
+.frequent_question__wrapper {
+  min-width: 32rem;
+  max-width: 58rem;
+  margin: 8rem auto 7rem auto;
+  color: var(--text);
+  padding: 0 1.5rem;
+}
+.frequent_question h2 {
+  margin: 0 auto 1 auto;
+}
+.frequent_question__text {
+  text-align: center;
+  margin: 1rem auto 2.8rem auto;
+}
+.frequent_question__list {
+  margin: 0 auto;
+  padding: 0;
+}
+.frequent_question__item {
+  margin-bottom: 1.2rem;
+}
+
+.frequent_question__details {
+  padding: 2rem 1.6rem;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: var(--beige);
+  border-radius: 3rem;
+  transition: 0.15s;
+}
+details[open] {
+  background: rgba(239, 233, 227, 1);
+  border-color: rgba(239, 233, 227, 1);
+}
+.frequent_question__question {
+  font-family: 'BebasNeue Bold';
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  justify-content: space-between;
+}
+summary {
+  display: block;
+  transition: 0.15s;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::before {
+  display: inline-block;
+  content: url('../svg/summary.svg');
+  width: 2.6rem;
+  height: 2.6rem;
+  transition: 0.15s;
+}
+details[open] > summary::before {
+  transform: rotate(45deg);
+  width: 2.6rem;
+  height: 2.6rem;
+  transition: 0.15s;
+}
+.frequent_question__answer {
+  margin: 3rem 0 0 0;
+  max-width: 84.3rem;
+}
+
+/* секция БАЗА ЗНАНИЙ */
+.knowledge_base__wrapper {
+  margin: 7rem 0 8rem 0;
+  padding-top: 1rem;
+  position: relative;
+  min-width: 32rem;
+  max-width: 192rem;
+}
+.knowledge_base__container_of_buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-left: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.knowledge_base__list {
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  overflow: scroll;
+}
+.knowledge_base__item {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+}
+.knowledge_base__button {
+  color: var(--accent);
+  border-color: var(--accent);
+  border-width: 0.1rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  text-align: center;
+  line-height: 120%;
+  padding: 2rem 1.6rem;
+  transition: 0.3s;
+}
+.knowledge_base__button:hover {
+  color: var(--white);
+  background-color: var(--accent_hover);
+  border-color: var(--accent_hover);
+}
+.knowledge_base__button:active {
+  border-color: var(--accent);
+  background: var(--accent);
+  background-color: var(--accent);
+  color: white;
+}
+.knowledge {
+  color: var(--white);
+  background-color: var(--accent);
+  border-radius: 3rem;
+  padding: 5rem 0;
+  margin-top: 5rem;
+}
+.knowledge_base__knowledge h2 {
+  margin-top: 0;
+}
+.knowledge__list {
+  margin: 2rem auto 3rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+}
+@media (min-width: 920px) {
+  .knowledge__list {
+    justify-content: center;
+  }
+}
+.knowledge__base_of_learning,
+.knowledge__puppy_socialization,
+.knowledge__features_of_behavior {
+  display: inline-block;
+  border-radius: 3rem;
+  margin: 0;
+}
+.knowledge__base_of_learning {
+  background-image: url(../images/основы_обучения_собак.jpeg);
+  background-color: var(--accent);
+  background-size: cover;
+  background-position: center;
+}
+.knowledge__puppy_socialization {
+  background-image: url(../images/социализация_щенка.jpeg);
+  background-color: var(--accent);
+  background-size: cover;
+  background-position: center;
+}
+.knowledge__features_of_behavior {
+  background-image: url(../images/особенности_поведения_корги.jpeg);
+  background-color: var(--accent);
+  background-size: cover;
+  background-position: center;
+  margin-right: 0;
+}
+.knowledge__link {
+  display: block;
+  width: 29rem;
+  margin-top: 0;
+  box-sizing: border-box;
+  color: var(--white);
+  font-family: 'BebasNeue Bold';
+  font-size: 2rem;
+  line-height: 120%;
+  font-weight: bold;
+  padding: 21.1rem 1.6rem 1.6rem 1.6rem;
+  border-radius: 3rem;
+  background: linear-gradient(
+    177.4deg,
+    rgba(171, 130, 100, 0.06) 1.83%,
+    #ab8264 97.83%
+  );
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.knowledge__container_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.knowledge__container_button a {
+  margin: 0;
+  letter-spacing: 0.05em;
+  padding: 2rem 8.6rem;
+}
+
+/* секция ЖИЗНЬ ПИТОМНИКА */
+.nursery_life__wrapper {
+  margin: 8rem auto;
+  padding: 0;
+  min-width: 32rem;
+  max-width: 61rem;
+}
+.nursery_life__list {
+  padding: 0 1.5rem;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  overflow: scroll;
+  gap: 1rem;
+}
+.nursery_life__image {
+  border-radius: 2rem;
+  width: 29rem;
+  height: 19.3rem;
+  display: block;
+  /* margin-left: auto;
+    margin-right: auto; */
+  object-fit: cover;
+  object-position: center;
+}
+.nursery_life__summary:before {
+  content: none;
+}
+.nursery_life__summary h3 {
+  margin: 0;
+}
+.nursery_life__description {
+  padding: 2rem 1.6rem;
+  background-color: var(--light_beige);
+  border-radius: 2rem;
+  color: var(--text);
+  /* margin-left: auto;
+    margin-right: auto; */
+}
+.description__title {
+  margin: 0 2rem 0 0;
+  font-family: 'BebasNeue';
+}
+.dash {
+  display: none;
+}
+.description__text {
+  margin: 1rem 2rem 1rem 0;
+}
+.author_date {
+  display: flex;
+  justify-content: space-between;
+}
+.author__text,
+.date__text {
+  color: var(--beige);
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  margin: 0;
+}
+.nursery_life__container_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nursery_life a {
+  margin: 0 auto;
+  padding: 2rem 10.4rem;
+  letter-spacing: 0.05em;
+}
+.nursery_life__button {
+  display: none;
+}
+
+/* секция МЫ ВСЕГДА РАДЫ ПОМОЧЬ */
+.help__wrapper {
+  display: block;
+  color: var(--text);
+  min-width: 29rem;
+  max-width: 58rem;
+  padding: 0 1.5rem;
+  margin: 8rem auto;
+}
+.help h2 {
+  margin: 0 auto;
+}
+.help__text {
+  text-align: center;
+  margin: 1rem 2rem 2rem 2.1rem;
+}
+.help__image {
+  border-radius: 3rem;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 290 / 210;
+  object-fit: cover;
+  object-position: center;
+}
+.help__form {
+  display: block;
+  min-width: 29rem;
+  margin: 3rem auto 0 auto;
+}
+.help__label,
+.help__label_message {
+  font-weight: bold;
+}
+
+.help__input,
+.help__input_message {
+  display: block;
+  width: 100%;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-color: var(--beige);
+  border-radius: 2rem;
+  color: var(--beige);
+  padding: 2rem 1.6rem;
+  min-width: 29rem;
+  max-width: 65.9rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 140%;
+  background-color: var(--white);
+}
+.help__input_message {
+  padding-bottom: 8rem;
+  margin-bottom: 3rem;
+}
+.help__input::placeholder,
+.help__input_message::placeholder {
+  color: var(--beige);
+}
+.help__input:focus {
+  border: 0.2rem solid var(--beige);
+}
+.help__container_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.help__container_button button {
+  margin: 0 auto;
+  padding: 2rem 10.55rem;
+  letter-spacing: 0.05em;
+}
+/* FOOTER */
+.footer {
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background-color: var(--beige);
+  color: var(--white);
+}
+.footer__wrapper {
+  display: block;
+  /* margin-left: auto;
+    margin-right: auto; */
+  min-width: 32rem;
+  padding: 6rem 1.5rem;
+}
+.footer span {
+  display: none;
+}
+.footer h3 {
+  line-height: 120%;
+  font-size: 2.4rem;
+}
+.footer ul {
+  padding-left: 0;
+}
+.footer__link_logo {
+  float: left;
+}
+.footer__link,
+.footer__link_of_contacts {
+  color: var(--white);
+}
+.footer__contacts,
+.footer__list_of_contacts {
+  margin: 0;
+  margin-left: 9rem;
+}
+.footer__contacts {
+  margin-bottom: 1rem;
+}
+.footer__item_of_contacts {
+  margin-bottom: 0.6rem;
+}
+.footer__link_of_contacts {
+  margin: 0.3rem 2rem;
+}
+.footer__list_of_social_network {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-around;
+}
+.footer__link_of_contacts {
+  color: #ffffff;
+}
+
+.footer__oferta,
+.footer__confidentiality {
+  font-size: 1.2rem;
+  line-height: 1.68rem;
+  color: var(--white);
+  margin: 0 0 3.4rem 0;
+}
+.footer__oferta {
+  margin: 0 0.7rem 3.4rem 0;
+}
+.footer__list_of_lists {
+  margin: 1.4rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer__item_of_lists h3 {
+  margin: 0;
+}
+.footer__item_of_lists {
+  margin-top: 2rem;
+}
+.footer__links {
+  display: block;
+  text-align: center;
+  margin-top: 0;
+
+  background-color: var(--beige);
+  color: var(--white);
+}
+.footer__grid_link,
+.footer__form_link,
+.footer__demo_link {
+  color: var(--white);
+  display: block;
+}
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,16 +1,20 @@
 import { existsSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 
+const GREEN_COLOR = '\x1b[32m%s\x1b[0m';
+const YELLOW_COLOR = '\x1b[33m%s\x1b[0m';
+const RED_COLOR = '\x1b[31m%s\x1b[0m';
+
 export const sendSuccess = (message: string) => {
-  console.log(`✅ ${message}`);
+  console.log(GREEN_COLOR, `✅ ${message}`);
 };
 
 export const sendWarning = (message: string) => {
-  console.log(`⚠️  ${message}`);
+  console.log(YELLOW_COLOR, `⚠️  ${message}`);
 };
 
 export const sendError = (message: string) => {
-  console.log(`❌ ${message}`);
+  console.log(RED_COLOR, `❌ ${message}`);
 };
 
 type GetFileContent = (relativePath: string) => string;

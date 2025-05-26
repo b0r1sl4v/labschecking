@@ -18,8 +18,6 @@ if (!linkContent?.length) {
 
 const stylesFiles = linkContent.map((linkTag) => linkTag.getAttribute('href'));
 
-console.log(stylesFiles);
-
 const existingStylesFiles = stylesFiles.reduce(
   (acc, filename) =>
     filename ? { ...acc, [filename.split('/').pop() ?? '']: filename } : acc,
@@ -37,10 +35,9 @@ if (hasNormalize && hasReseter) {
     'normalize.css и reseter.css не могут быть подключены одновременно',
   );
 }
-
 if (!existingStylesFiles['style.css']) {
   sendError('style.css отсутствует');
-  process.exit();
+  process.exit(1);
 }
 
 const styles = getFileContent(existingStylesFiles['style.css']);

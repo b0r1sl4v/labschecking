@@ -2,28 +2,28 @@ import { parse as parseDOM } from 'node-html-parser';
 import { sendError, sendSuccess } from './common';
 
 type GetHTMLTags = (
-  tags: string[],
+  selectors: string[],
   htmlContent: string,
 ) => Record<string, HTMLElement[]>;
 
-export const getHTMLTags: GetHTMLTags = (tags, htmlContent) => {
+export const getHTMLTags: GetHTMLTags = (selectors, htmlContent) => {
   let errorDetected = false;
   const result = {};
   const root = parseDOM(htmlContent);
 
-  for (const tag of tags) {
-    const found = root.querySelectorAll(tag);
+  for (const selector of selectors) {
+    const found = root.querySelectorAll(selector);
     if (!found.length) {
-      sendError(`Тег <${tag}> НЕ найден`);
+      sendError(`Селектор "${selector}" НЕ найден`);
       errorDetected = true;
       continue;
     }
 
-    result[tag] = found;
+    result[selector] = found;
   }
 
   if (!errorDetected) {
-    sendSuccess('Все теги найдены');
+    sendSuccess('Все селекторы найдены');
   }
 
   return result;

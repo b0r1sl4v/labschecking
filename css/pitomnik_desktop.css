@@ -1,0 +1,544 @@
+@font-face {
+    font-family: "BebasNeue Bold";
+    src: url("../fonts/BebasNeue/BebasNeueBold.otf") format("opentype");
+}
+@font-face {
+    font-family: "BebasNeue Bold";
+    src: url("../fonts/BebasNeue/bebas-neue-v14-latin-regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "BebasNeue";
+    src: url("../fonts/BebasNeue/BebasNeueRegular.otf") format("opentype");
+}
+@font-face {
+    font-family: "Raleway Regular";
+    src: url("../fonts/Raleway/Raleway.ttf") format("truetype");
+
+}
+@font-face {
+    font-family: "Raleway Regular";
+    src: url("../fonts/Raleway/raleway-v34-latin-regular.woff2") format("woff2");
+}
+:root {
+    --accent: #396448;
+    --beige: #AB8264;
+    --light_beige: #EFE9E3;
+    --accent_hover: #56986E;
+    --text: #272727;
+    --white: #F9F4F0;
+    font-size: 62.5%;
+}
+@media (min-width: 1920px){
+    h1, .about h1 {
+        line-height: 120%;
+        font-size: 7rem;
+    }
+    h2 {
+        line-height: 120%;
+        font-size: 6.8rem;
+    }
+    h3, button {
+        line-height: 120%;
+        font-size: 2.8rem;
+    }
+    p, a {
+        font-size: 1.8rem;
+        line-height: 140%;
+    }
+    .green_button, .white_button, .button_whatsapp,.header__tel {
+        line-height: 120%;
+        font-size: 2.8rem;
+    }
+    .header__wrapper {
+        gap: 6rem;
+        justify-content: space-between;
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+    }
+    .header__nav_contact {
+        gap: 9rem;
+        margin: 4.05rem 0;
+    }
+    .header__navigation {
+        display: flex;
+        gap: 12rem;
+        justify-content: space-between;
+    }
+    .header__navigation_list {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__nav_link {
+        white-space: nowrap;
+        color: var(--text);
+        font-family: "Raleway Regular";
+        font-size: 1.6rem;
+        line-height: 120%;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .header__nav_link_contacts {
+        color: white;
+    }
+    .header__nav_link:hover {
+        background-color: var(--accent_hover);
+        color: var(--white);
+    }
+    .header__menu {
+        display: none;
+    }
+    .about__wrapper {
+        padding: 0;
+        gap: 10.308rem;
+        margin: 0 auto 15rem auto;
+        
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+    }
+    .about__desc_container {
+        margin: 22.1rem 0 0 0;
+    }
+    .about__description {
+        margin: 2rem 9.907rem 6rem 0.2rem;
+    }
+    .about__buttons {
+        max-width: 50rem;
+    }
+    .about__button_dog {
+        padding: 2.4rem 4.3rem;
+        
+    }
+    .about__button_whatsapp {
+        padding: 2.4rem 4rem;
+    }
+    .about__container_img {
+        min-width: 65.449rem;
+    }
+    .about__search {
+        margin: 68.7rem 12.009rem 6.1rem 9.207rem;
+        padding: 2.4rem 3rem 2.8rem 3rem;
+    }
+    .search__image{
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        margin: 0;
+    }
+    .search__text{
+        margin: 0.25rem 0 0 0;
+    }
+
+    .about_nursery__wrapper {
+        padding: 0;
+        margin: 15rem auto 12rem auto;
+        
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+    }
+    .about_nursery__container {
+        min-height: 42.8rem;
+        grid-template-columns: 26.1% auto 14.18% 22.4% 27.6%;
+        grid-template-rows: 60% auto;
+    }
+    .about_nursery__image_first {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-image: url("../images/about_nursery_first_desktop.jpg");
+        max-width: none;
+    }
+    .about_nursery_svg {
+        right: -1.635rem;
+        bottom: -3.635rem;
+        overflow: hidden;
+    }
+    .about_nursery__first_text {
+        grid-column: 2 / span 3;
+        grid-row: 1 / span 1;
+        padding: 4.8rem 10.5rem 5.7rem 5.6rem;
+        line-height: 110%;
+        font-size: 2.8rem;
+        letter-spacing: 0;
+        word-spacing: 0;
+    }
+    .about_nursery__image_second {
+        background-image: url("../images/о_питомнике_вторая_собака.jpeg");
+        grid-column: 5 / span 1;
+        grid-row: 1 / span 2;
+        max-width: none;
+    }
+    .about_nursery__second_text {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+        font-size: 1.8rem;
+        line-height: 120%;
+        padding: 3rem 5.4rem 3rem 3rem;
+        word-spacing: .07em;
+        letter-spacing: .04em;
+    }
+    .about_nursery__image_third {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+        background-image: url("../images/about_nursery_third_desktop.jpg");
+        max-width: none;
+    }
+    .about_nursery__third_text {
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 1;
+        max-height: none;
+        font-size: 1.8rem;
+        line-height: 120%;
+        padding: 3rem 4.4rem 3rem 3rem;
+        word-spacing: .07em;
+        letter-spacing: .04em;
+    }
+    
+    .our_puppies__wrapper {
+        margin: 12rem 0 15rem 0;
+    }
+    .our_puppies__list_of_buttons {
+        gap: 2rem;
+    }
+    .our_puppies__lists {
+        margin: 6.5rem 0 0 0;
+        padding: 8rem 29rem;
+    }
+    .lists__black_chij {
+        gap: 3rem;
+        justify-content: center;
+    }
+    .lists__button_of_black_chij {
+        width: 42.7rem;
+        height: 37rem;
+        padding: 27.2rem 3rem 3rem 3rem;
+    }
+    .lists__title_first, .lists__title{
+        font-size: 2.8rem;
+    }
+    .lists a{
+        padding: 2.4rem 7.25rem;
+    }
+    
+    .best_choice__wrapper {
+        margin: 15rem auto 23.1rem auto;
+    }
+    .best_choice__list{
+        position: relative;
+        margin: 13rem 45.7rem 9.1rem 0;
+        grid-template-rows: 200px 200px;
+    }
+    .best_choice_image {
+        top: 10.6rem;
+        right: 0;
+        left: auto;
+        width: 65.6rem;
+        height: 61.1rem;
+    }
+    .best_choice__title {
+        margin: 8.2rem 12.8rem 1rem 3rem;
+        font-size: 2.8rem;
+    }
+    .best_choice__svg {
+        top: 1rem;
+    }
+    .best_choice__svg_4 {
+        top: 0;
+        right: -2.3rem;
+    }
+    .best_choice__text {
+        margin: 1rem 10.7rem 3rem 3rem;
+        line-height: 120%;
+    }
+    .best_choice__text_3 {
+        margin: 1rem 6.6rem 3rem 3rem;
+    }
+    .best_choice__text_4 {
+        margin: 1rem 12.8rem 3rem 3rem;
+        letter-spacing: .02em;
+    }
+
+    .about_breed__wrapper {
+        margin: 14rem 0 15rem 0;
+    }
+    .about_breed__list {
+        gap: 2rem;
+    }
+    .breeds {
+        margin: 6.5rem 0 0 0;
+        padding: 8rem 29rem;
+    }
+    .breeds__list {
+        grid-template-columns: auto 25% 25%;
+        gap: 3rem;
+        margin: 4rem auto;
+    }
+    .breeds__image {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 3;
+    }
+    .breeds__appearance {
+        grid-column: 2 / span  2;
+        grid-row: 1 / span 1;
+        padding: 4rem 3rem 4.6rem 3rem;
+    }
+    .breeds__personality {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        padding: 3rem;
+    }
+    .breeds__adaptability {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+        padding: 3rem;
+    }
+    .breeds__care  {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+        padding: 3rem;
+    }
+    .breeds__activity {
+        max-height: fit-content;
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 1;
+        padding: 3rem;
+    }
+    .breeds__paws {
+        display: none;
+    }
+    .breeds__paws_desktop {
+        margin: 1rem 0;
+        display: block;
+    }
+    .breeds a{
+        padding: 2.4rem 9.3rem;
+    }
+
+    .frequent_question__wrapper {
+        margin: 15rem auto 14rem auto;
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+    }
+    .frequent_question__text {
+        margin: 1.5rem 34.3rem 5.4rem 34.3rem;
+    }
+    .frequent_question__details {
+        padding: 4rem;
+    }
+    .frequent_question__question {
+        font-size: 2.8rem;
+    }
+    .frequent_question__answer {
+        margin: 3rem 0 0 0;
+    }
+
+    .knowledge_base__wrapper {
+        margin: 14rem 0 15rem 0;
+        max-width: none;
+    }
+    .knowledge_base__list {
+        gap: 2rem;
+    }
+    .knowledge_base__button {
+        padding: 2rem;
+    }
+    .knowledge {
+        margin: 6.5rem 0 0 0;
+        padding: 8rem 29rem;
+        width: 100%;
+        max-width: none;
+    }
+    .knowledge__list {
+        margin: 4rem 0;
+        justify-content: center;
+    }
+    .knowledge__link {
+        width: 42.7rem;
+        height: 37rem;
+        padding: 28.9rem 3rem 4.7rem 3rem;
+        font-size: 2.8rem;
+    }
+
+    .nursery_life__wrapper {
+        padding: 0 29rem;
+        margin: 15rem auto;
+        width: 100%;
+        max-width: none;
+        
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+        
+    }
+    .nursery_life__list {
+        margin: 4rem 0;
+        max-width: none;
+        max-height: none;
+    }
+    .nursery_life__image {
+        aspect-ratio: 343 / 200;
+        margin: 0;
+        object-fit: cover;
+        height: auto;
+    }
+    .description {
+        margin: 0;
+        max-height: none;
+        padding: 6.15rem 3rem;
+        flex-grow: 1;
+    }
+    .description1 {
+        padding: 3rem;
+    }
+    .description h3 {
+        max-width: 25.2rem;
+        letter-spacing: .04em;
+        word-spacing: .03em;
+        font-size: 2.2rem;
+        margin: 0 0 1.6rem 0;
+    }
+    .description1 h3 {
+        max-width: none;
+        margin: 0 20rem 0 0 ;
+        letter-spacing: 0;
+        word-spacing: 0;
+        font-size: 2.8rem;
+    }
+    .description__text {
+        margin: 2rem 0;
+    }
+    .author_date {
+        max-width: 25.2rem;
+        margin: 0;
+        justify-content: start;
+    }
+    .author_date1 {
+        max-width: none;
+        justify-content: space-between;
+    }
+    .dash {
+        margin: 0 0.8rem;
+    }
+    .author_date p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    .author_date1 p {
+        font-size: 1.4rem;
+        line-height: 120%;
+    }
+
+    .help__wrapper {
+        padding: 0;
+        
+        min-width: 192rem;
+        padding: 0 29rem;
+        max-width: 238rem;
+    }
+    .help__text {
+        line-height: 120%;
+        margin: 1.5rem 34rem 6rem 34rem;
+    }
+    .help__image {
+        display: block;
+    }
+    .help__form_image {
+        display: none;
+    }
+    .help__container {
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: auto;
+        gap: 3rem;
+    }
+    .help__image {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin: 0;
+        aspect-ratio: 654 / 483;
+    }
+    .help__form_container {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3.6rem;
+    }
+    .help__form {
+        grid-template-columns: 50% auto;
+        grid-template-rows: 30% auto;
+        margin: 0;
+        gap: 3rem;
+    }
+    .help__label_message {
+        grid-column: 1 / span 2;
+    }
+    .help__container_button {
+        margin: 0;
+        align-self: start;
+    }
+    .help__input {
+        padding: 2.5rem 3rem;
+        max-width: none;
+        font-size: 1.8rem;
+        line-height: 120%;
+    }
+    .help__input_message{
+        padding: 2.5rem 2rem 12.781rem 3rem;
+    }
+    label {
+        
+        font-size: 1.8rem;
+       
+        line-height: 120%;
+    }
+    .help__container_button a{
+        padding: 2.4rem 9.45rem;
+    }
+
+    .footer {
+        padding: 8rem 29rem;
+    }
+    .footer__wrapper{
+        margin: 0 auto 2rem auto;
+        flex-direction: row;
+        gap: 11.3rem;
+        justify-content: space-between;
+        max-width: 180rem;
+    }
+    .footer__wrapper_contact {
+        gap: 4rem;
+    }
+    .footer__container_of_contacts{
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .footer__list_of_social_network {
+        justify-content: left;
+        margin: 0 0 2rem 0;
+    }
+    .footer__oferta, .footer__confidentiality {
+        display: block;
+        margin: 0;
+        font-size: 1.8rem;
+        line-height: 120%;
+    }
+    .footer__oferta {
+        margin: 0 0 1rem 0;
+    }
+    .footer__list_of_lists {
+        gap: 4rem;
+    }
+    .footer__item_of_lists h3 {
+        font-size: 2.8rem;
+        letter-spacing: -.01em;
+    }
+}
