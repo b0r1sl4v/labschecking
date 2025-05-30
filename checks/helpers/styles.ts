@@ -1,4 +1,4 @@
-import { parse as parseStyles } from 'css';
+import { Media, parse as parseStyles } from 'css';
 import { sendError, sendWarning } from './common';
 
 type Rule = {
@@ -88,7 +88,6 @@ export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
     sendError('Стили некорректны');
     process.exit(1);
   }
-
   let allFound = true;
   let oneFound = false;
   for (const prop of props) {
@@ -127,4 +126,35 @@ export const getCommonStyles: GetCommonStyles = (props, cssContent) => {
   }
 
   return { allFound, oneFound };
+};
+
+type MediaBlock = {
+  query: string;
+  rules: Media['rules'];
+};
+
+type GetMediaQueries = (cssContent: string) => MediaBlock[];
+
+export const getMediaQueries: GetMediaQueries = (cssContent: string) => {
+  const stylesTree = parseStyles(cssContent).stylesheet?.rules;
+  if (!stylesTree) {
+    sendError('Стили некорректны');
+    process.exit(1);
+  }
+
+  const result: MediaBlock[] = [];
+
+  for (const block of stylesTree) {
+    if (block.type !== 'media' || !block.rules?.length || !block.media)
+      continue;
+
+    const mediaBlock: MediaBlock = {
+      query: block.media,
+      rules: block.rules,
+    };
+
+    result.push(mediaBlock);
+  }
+
+  return result;
 };

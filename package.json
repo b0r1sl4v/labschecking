@@ -3,7 +3,8 @@
   "version": "0.1",
   "type": "module",
   "scripts": {
-    "check-labs": "node --import=tsx checks/runner.ts"
+    "check-labs": "node --import=tsx checks/runner.ts",
+    "validate": "npm exec html-validate index.html"
   },
   "devDependencies": {
     "@types/css": "^0.0.38",
@@ -12,6 +13,7 @@
   },
   "dependencies": {
     "css": "^3.0.0",
+    "html-validate": "^9.5.5",
     "node-html-parser": "^7.0.1"
   }
 }

@@ -815,6 +815,7 @@ details[open] > summary::before {
   padding: 2rem 1.6rem;
   transition: 0.3s;
 }
+
 .knowledge_base__button:hover {
   color: var(--white);
   background-color: var(--accent_hover);
@@ -1155,4 +1156,10 @@ details[open] > summary::before {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@media (min-width: 1404px) {
+  .knowledge__list {
+    justify-content: center;
+  }
 }
