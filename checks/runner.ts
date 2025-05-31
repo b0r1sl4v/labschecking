@@ -1,11 +1,12 @@
 import { existsSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { sendError } from './helpers/common';
 
 const scriptNumber = process.argv[2];
 
 if (isNaN(Number(scriptNumber))) {
-  console.error('❌ Не указан номер скрипта.');
+  sendError('Не указан номер скрипта.');
   console.log('Пример: npm run check-labs 1');
   process.exit(1);
 }
@@ -15,9 +16,7 @@ const __dirname = dirname(__filename);
 const scriptPath = join(__dirname, `lab${scriptNumber}.ts`);
 
 if (!existsSync(scriptPath)) {
-  console.error(
-    `❌ Скрипт lab${scriptNumber}.ts не найден по пути: ${scriptPath}`,
-  );
+  sendError(`Скрипт lab${scriptNumber}.ts не найден по пути: ${scriptPath}`);
   process.exit(1);
 }
 

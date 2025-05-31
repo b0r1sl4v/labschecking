@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "check-labs": "node --import=tsx checks/runner.ts",
-    "validate": "npm exec html-validate index.html"
+    "validate": "node --import=tsx checks/validate.ts"
   },
   "devDependencies": {
     "@types/css": "^0.0.38",
