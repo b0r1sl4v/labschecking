@@ -26,7 +26,6 @@
   --accent_hover: #56986e;
   --text: #272727;
   --white: #f9f4f0;
-  font-size: 62.5%;
 }
 body {
   background-color: var(--white);
