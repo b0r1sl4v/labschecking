@@ -34,9 +34,12 @@ export const getSelectorStyles: GetSelectorStyles = (props, cssContent) => {
     )
       continue;
     for (const selector of rulesBlock.selectors) {
-      if (selector in props) {
-        selectorsFound[selector] = true;
-        for (const prop of props[selector]) {
+      for (const selectorToFind of selectorsToFind) {
+        if (!selector.includes(selectorToFind)) {
+          continue;
+        }
+        selectorsFound[selectorToFind] = true;
+        for (const prop of props[selectorToFind]) {
           let found = false;
           for (const rule of rulesBlock.declarations) {
             if (rule.type === 'comment' || !rule.property) continue;

@@ -51,17 +51,17 @@ if (fields[fieldTags[0]]?.length && fields[fieldTags[1]]?.length) {
 }
 
 console.log('\nПроверка наличия необходимых типов полей ввода');
-const inputTags = [
-  'input[type="text"]',
-  'input[type="date"]',
-  'input[type="radio"]',
-  'input[type="password"]',
-  'input[type="email"]',
-  'input[type="tel"]',
-  'input[type="checkbox"]',
-  'input+label',
+const inputTypes = [
+  'text',
+  'date',
+  'radio',
+  'password',
+  'email',
+  'tel',
+  'checkbox',
 ];
-const inputs = getHTMLTags(inputTags, forms[0]?.innerHTML);
+const inputTags = inputTypes.map((type) => `form input[type="${type}"]`);
+const inputs = getHTMLTags(inputTags, formContent);
 
 let hasAll = true;
 for (const tag of inputTags) {
@@ -79,7 +79,7 @@ if (hasAll) {
 console.log(
   '\nПроверка правильности определения типов кнопок для отправки и сброса данных',
 );
-const buttonTags = ['button[type="submit"]', 'button[type="reset"]'];
+const buttonTags = ['form button[type="submit"]', 'form button[type="reset"]'];
 const buttons = getHTMLTags(buttonTags, formContent);
 if (buttons[buttonTags[0]]?.length && buttons[buttonTags[1]]?.length) {
   sendSuccess('Существуют необходимые кнопки с верно указанными типами');
