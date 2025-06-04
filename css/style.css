@@ -69,6 +69,10 @@ dl {
   line-height: 140%;
 }
 
+.card:hover .card-inner {
+   transform: rotateY(180deg); 
+}
+
 h1,
 h2,
 h3,

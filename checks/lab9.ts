@@ -174,3 +174,47 @@ if (hasDictRules) {
 } else {
   sendWarning('Стилей для dl+dt может не быть');
 }
+
+console.log('Проверка двусторонней карты')
+getFileContent('demo.html')
+const cardProps: CommonStyleProps = [
+  {
+    rule: /transform-style/,
+    definition: /preserve\-3d/
+  },
+  {
+    rule: /transition/
+  },
+  {
+    rule: /transform/,
+    definition: /^rotate[X-Z]*\([\w%]+\)$/
+  },
+  {
+    rule: /backface-visibility/,
+    definition: /hidden/
+  },
+  {
+    rule: /perspective/
+  }
+];
+const { allFound: cardRulesFound } = getCommonStyles(cardProps, cssContent);
+if (cardRulesFound) {
+  sendSuccess('Есть все нужные для двусторонней карты правила')
+} else {
+  sendWarning('Нет некоторых правил, нужных для двусторонней карты')
+}
+
+console.log('\nПроверка бегущей строки')
+const marqueeProps: CommonStyleProps = [
+  {
+    rule: /animation/,
+    definition: /infinite/
+  }
+]
+
+const { allFound: hasMarquee } = getCommonStyles(marqueeProps, cssContent)
+if (hasMarquee) {
+  sendSuccess('Есть бегущая строка')
+} else {
+  sendError('Бегущей строки нет')
+}

@@ -36,7 +36,7 @@ if (!imgFolderFound) {
 console.log('\nПроверка index.html:');
 const htmlContent = getFileContent('index.html');
 const tags = getHTMLTags(['img', 'figure'], htmlContent);
-console.log(process.cwd().split('/').slice(-1)[0]);
+const folderName = process.cwd().split('/').slice(-1)[0];
 
 for (const img of tags['img'] || []) {
   const src = img.getAttribute('src');
@@ -44,8 +44,7 @@ for (const img of tags['img'] || []) {
     sendError('<img> без атрибута src');
     continue;
   }
-
-  if (!/^(\.\/|\.\.\/)/.test(src)) {
+  if (src.includes(folderName)) {
     sendError(`<img src="${src}"> не использует относительный путь`);
   }
   if (!/\.(png|jpe?g|svg)$/i.test(src)) {
