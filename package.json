@@ -4,11 +4,17 @@
   "type": "module",
   "scripts": {
     "check-labs": "node --import=tsx checks/runner.ts",
-    "validate": "node --import=tsx checks/validate.ts"
+    "validate": "node --import=tsx checks/validate.ts",
+    "lint": "npx eslint && npx stylelint \"**/*.css\""
   },
   "devDependencies": {
+    "@html-eslint/eslint-plugin": "^0.41.0",
+    "@html-eslint/parser": "^0.41.0",
     "@types/css": "^0.0.38",
     "@types/node": "^22.15.3",
+    "eslint": "^9.28.0",
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^38.0.0",
     "tsx": "^4.19.4"
   },
   "dependencies": {

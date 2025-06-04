@@ -2,17 +2,20 @@
 .info__form {
     display: block;
     max-width: 50rem;
-    margin: 15rem auto 8rem auto;
+    margin: 15rem auto 8rem;
 }
+
 .info__personal, .info__contacts {
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0;
     border-radius: 10px;;
     border-color: grey;
 }
+
 .label {
     display: block;
     transition: 0.3s;
 }
+
 input[type="radio"], input[type="checkbox"] {
     appearance: none;
     width: 1.5rem;
@@ -23,52 +26,64 @@ input[type="radio"], input[type="checkbox"] {
     border-radius: 50%;
     transition: 0.3s;
 }
+
 input[type="radio"]:checked, input[type="checkbox"]:checked {
     background-color: black;
 }
+
 .info__gender:hover ~ p {
     color: brown;
     font-weight: bold;
 }
+
 p {
     transition: 0.3s;
 }
+
 .contact_time__container:hover ~ p {
     color: brown;
     font-weight: bold;
 }
+
 .info__name, .info__dob, .info__gender, .info__password, .info__email, .info__phone, .info__contact_time, .info_gender_container, .info__contact_time{
     display: flex;
     margin: 10px;
     flex-direction: column-reverse;
 }
+
 .info__gender {
     flex-direction: row-reverse;
     gap: 0.5rem;
     justify-content: left;
 }
+
 .info__contact_time {
     display: flex;
     flex-direction: column-reverse;
     gap: 1rem;
     justify-content: left;
 }
+
 .contact_time__container {
     padding: 0;
     margin: 0;
 }
+
 .info__select_time {
     margin: 0;
 }
+
 .contact_time__container {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
 }
+
 .gender {
     display: flex;
     justify-content: center;
 }
+
 .info__input, .info__select {
     display: block;
     border-width: 0.2rem;
@@ -82,27 +97,34 @@ p {
     font-size: 1.4rem;
     line-height: 140%;
 }
+
 .info__select_gender {
     margin: 0;
 }
+
 #gender_women, #gender_men {
     margin: 0;
     padding: 0;
 }
+
 .info__input:focus {
     border-color: gray;
 }
+
 .info__input:hover ~ label{
     color: brown;
     font-weight: bold;
 }
+
 #name, #dob, #password, #email {
     border-color: brown;
 }
+
 .required {
     color: brown;
     margin: 10px 0;
 }
+
 span {
     display: inline-table;
     vertical-align: middle;
@@ -110,10 +132,12 @@ span {
     font-size: 30px;
     color: brown;
 }
+
 .buttons {
     display: flex;
     justify-content: space-between;
 }
+
 .submit_btn, .reset_btn {
     background-color: gray;
     border-color: grey;
@@ -122,16 +146,19 @@ span {
     border-radius: 10px;
     letter-spacing: .05em;
 }
+
 .footer__link_logo {
     transform: rotate(-30deg) scale(1.5) skew(15deg, 15deg);
     position: relative;
     left: -7rem;
 }
+
 .second_task__wrapper {
     display: block;
     max-width: 50rem;
     margin: 8rem auto;
 }
+
 dl {
     margin: 2rem 0;
 }
@@ -145,15 +172,18 @@ dt {
     padding-left: 10px;
     position: relative;
 }
+
 dt::first-letter {
     font-size: 2em;
     font-weight: bold;
     color: brown;
 }
+
 dd {
     margin-left: 20px;
     position: relative;
 }
+
 dd::before {
     content: "🛈";
     font-size: 1.2em;
@@ -179,9 +209,11 @@ dd::before {
     display: flex;
     flex-direction: column;
 }
+
 .second_task__container {
     margin: 0;
 }
+
 .second_task__container:nth-child(even){
     background-color: aqua;
 }
