@@ -29,3 +29,14 @@ npm run validate index.html
 ```bash
 npm run validate grid/grid.html
 ```
+
+## Линтеры
+
+Для html файлов работает плагин html-eslint, для css файлов stylelint. Кроме того, eslint отмечает ошибки в html файлах прямо в IDE. Чтобы запустить его, нажмите `ctrl+shift+P` и выберите в списке `ESLint: Restart ESLint Server`.
+
+Чтобы запустить оба линтера, введите команду: 
+```bash
+npm run lint
+```
+
+Если найдутся ошибки в html, то ошибки в стилях уже не будут выведены
